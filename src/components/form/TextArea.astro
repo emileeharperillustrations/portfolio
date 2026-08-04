@@ -1,8 +1,13 @@
 ---
 import type { HTMLAttributes } from "astro/types";
 
-interface Props extends HTMLAttributes<"textarea"> {}
-const { ...attrs } = Astro.props;
+interface Props extends HTMLAttributes<"textarea"> {
+  label?: String;
+}
+const { label: labelText, ...attrs } = Astro.props;
 ---
 
-<textarea {...attrs}></textarea>
+<div class="pb-2">
+  <label for={attrs.id}>{labelText}</label>
+  <textarea {...attrs}></textarea>
+</div>

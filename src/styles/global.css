@@ -88,7 +88,18 @@ section,
   }
 }
 
+@font-face {
+  font-family: "Liham";
+  src: url("/fonts/liham.woff2");
+}
+
+@font-face {
+  font-family: "Copperplate Gothic 32 BC";
+  src: url("/fonts/copperplate-gothic-32-bc.woff2");
+}
+
 :root {
+  /* Base Colors */
   --color-stone-50: oklch(98.5% 0.001 106.423);
   --color-stone-100: oklch(97% 0.001 106.424);
   --color-stone-200: oklch(92.3% 0.003 48.717);
@@ -101,19 +112,51 @@ section,
   --color-stone-900: oklch(21.6% 0.006 56.043);
   --color-stone-950: oklch(14.7% 0.004 49.25);
 
+  /* Theme Colors */
   --color-background: var(--color-stone-950);
   --color-foreground: var(--color-stone-300);
   --color-primary: #efefef;
   --color-primary-foreground: #000000;
   --color-muted: var(--color-stone-500);
   --color-muted-foreground: var(--color-stone-800);
-
-  --border-color: #292524;
   --border-radius: 4px;
+  --title-font: "Liham", Georgia, "Times New Roman", serif;
+  --body-font: "Copperplate Gothic 32 BC", Georgia, "Times New Roman", serif;
+
+  /* Component Colors */
+  --color-input: var(--color-muted-foreground);
+  --color-input-foreground: var(--color-muted);
+  --color-input-border: #292524;
+  --input-border-radius: var(--border-radius);
 }
 
+/* Page Styles */
 html,
 body {
   background-color: var(--color-background);
   color: var(--color-foreground);
+  font-family: var(--body-font);
+}
+
+.title {
+  font-family: var(--title-font);
+}
+
+/* Element Styles */
+input,
+textarea {
+  background-color: var(--color-input);
+  color: var(--color-input-foreground);
+  border-color: var(--color-input-border);
+  border-radius: var(--input-border-radius);
+  border-style: solid;
+  border-width: 1px;
+  padding-top: 8px;
+  padding-bottom: 8px;
+  font-size: 16px;
+  width: 100%;
+}
+
+label {
+  color: var(--color-input-foreground);
 }
