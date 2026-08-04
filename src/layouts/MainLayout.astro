@@ -1,6 +1,12 @@
 ---
 import "../styles/util.css";
 import "../styles/global.css";
+
+type Props = {
+  title?: String;
+};
+
+const { title } = Astro.props;
 ---
 
 <html lang="en">
@@ -10,7 +16,7 @@ import "../styles/global.css";
     <link rel="icon" href="/favicon.ico" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Emilee Harper</title>
+    <title>{title ? `Emilee Harper | ${title}` : "Emilee Harper"}</title>
   </head>
   <body>
     <slot />
