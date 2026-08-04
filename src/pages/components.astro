@@ -1,0 +1,18 @@
+---
+import MainLayout from "@layouts/MainLayout.astro";
+import Input from "@components/form/Input.astro";
+import TextArea from "@/components/form/TextArea.astro";
+import Button from "@/components/form/Button.astro";
+---
+
+<MainLayout>
+  <h2>Components</h2>
+  <h3>Form</h3>
+  <form onsubmit="event.preventDefault();">
+    <Input type="text" placeholder="Text Input" required />
+    <Input type="email" placeholder="Email Input" required />
+    <Input type="tel" placeholder="Phone Input" />
+    <TextArea placeholder="Text Area Input" required />
+    <Button>Submit</Button>
+  </form>
+</MainLayout>
