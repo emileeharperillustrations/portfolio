@@ -5,4 +5,41 @@ interface Props extends HTMLAttributes<"button"> {}
 const { ...attrs } = Astro.props;
 ---
 
+<style>
+  button {
+    --color-button: var(--color-primary);
+    --color-button-foreground: var(--color-primary-foreground);
+    --color-button-hover: color-mix(
+      in oklab,
+      var(--color-button),
+      #ffffff 100%
+    );
+    --color-button-pressed: color-mix(in oklab, var(--color-button), #000 7.5%);
+
+    --button-border-radius: var(--border-radius);
+  }
+
+  button {
+    background-color: var(--color-button);
+    color: var(--color-button-foreground);
+    width: 100%;
+    padding-block: 1rem;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    border-radius: var(--button-border-radius);
+
+    transition: all 200ms ease-in-out;
+  }
+
+  button:hover {
+    cursor: pointer;
+    background-color: var(--color-button-hover);
+  }
+
+  button:active {
+    background-color: var(--color-button-pressed);
+  }
+</style>
+
 <button {...attrs}><slot /></button>

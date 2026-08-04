@@ -127,12 +127,6 @@ button {
   --border-radius: 4px;
   --title-font: "Liham", Georgia, "Times New Roman", serif;
   --body-font: "Copperplate Gothic 32 BC", Georgia, "Times New Roman", serif;
-
-  /* Component Colors */
-  --color-input: var(--color-muted-foreground);
-  --color-input-foreground: var(--color-muted);
-  --color-input-border: #292524;
-  --input-border-radius: var(--border-radius);
 }
 
 /* Page Styles */
@@ -150,6 +144,11 @@ body {
 /* Element Styles */
 input,
 textarea {
+  --color-input: var(--color-muted-foreground);
+  --color-input-foreground: var(--color-muted);
+  --color-input-border: #292524;
+  --input-border-radius: var(--border-radius);
+
   background-color: var(--color-input);
   color: var(--color-input-foreground);
   border-color: var(--color-input-border);
