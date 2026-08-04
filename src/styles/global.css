@@ -10,7 +10,11 @@
   }
 }
 
+html,
 body {
+  overscroll-behavior: none;
+  margin: 0;
+  padding: 0;
   line-height: 1.6;
   font-size: 18px;
   font-optical-sizing: auto;
@@ -127,6 +131,9 @@ button {
   --border-radius: 4px;
   --title-font: "Liham", Georgia, "Times New Roman", serif;
   --body-font: "Copperplate Gothic 32 BC", Georgia, "Times New Roman", serif;
+
+  --header-height: 52px;
+  --footer-height: 64px;
 }
 
 /* Page Styles */
@@ -137,11 +144,32 @@ body {
   font-family: var(--body-font);
 }
 
+body {
+  padding-top: var(--header-height);
+  padding-bottom: var(--footer-height);
+}
+
 .title {
+  display: block;
+  text-align: center;
   font-family: var(--title-font);
+  font-size: 18px;
 }
 
 /* Element Styles */
+
+h1 {
+  font-size: 32px;
+}
+
+h2 {
+  font-size: 26px;
+}
+
+h3 {
+  font-size: 24px;
+}
+
 input,
 textarea {
   --color-input: var(--color-muted-foreground);

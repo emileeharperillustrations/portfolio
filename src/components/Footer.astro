@@ -1,0 +1,64 @@
+---
+type Props = {
+  currentPage?: "portfolio" | "about" | "contact";
+};
+
+const { currentPage = "portfolio" } = Astro.props;
+---
+
+<style>
+  footer {
+    --color-footer-background: var(--color-background);
+    --color-footer-border: var(--color-muted-foreground);
+  }
+
+  footer {
+    position: fixed;
+    bottom: -1;
+    height: var(--footer-height);
+    width: 100%;
+    background-color: var(--color-footer-background);
+    border-top: 1px solid var(--color-footer-border);
+    display: flex;
+    flex: 1 1 0;
+    align-items: center;
+    justify-content: center;
+    z-index: 5;
+    padding-top: 0.5rem;
+    padding-bottom: 0.5rem;
+  }
+
+  a {
+    font-size: 14px;
+    color: var(--color-muted);
+    display: block;
+    width: 100%;
+    height: 100%;
+    text-align: center;
+    align-content: center;
+    text-decoration: none;
+    border-right: 1px solid var(--color-footer-border);
+  }
+
+  a:last-child {
+    border-right: none;
+  }
+
+  a:hover,
+  a:active,
+  a.active {
+    color: var(--color-foreground);
+  }
+</style>
+
+<footer>
+  <a href="#" class:list={[currentPage == "portfolio" ? "active" : null]}>
+    Portfolio
+  </a>
+  <a href="#" class:list={[currentPage == "about" ? "active" : null]}>
+    About
+  </a>
+  <a class:list={[currentPage == "contact" ? "active" : null]} href="#">
+    Contact
+  </a>
+</footer>
