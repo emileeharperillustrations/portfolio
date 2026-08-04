@@ -6,9 +6,44 @@ import Button from "@/components/form/Button.astro";
 ---
 
 <MainLayout>
-  <h2>Components</h2>
+  <section class="container">
+    <h1>Components</h1>
+  </section>
+  <hr />
+
+  <section class="container">
+    <h2>Typography</h2>
+    <h1>Header 1</h1>
+    <h2>Header 2</h2>
+    <h3>Header 3</h3>
+
+    <p>
+      paragraph Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nobis
+      doloremque nam adipisci nemo minima mollitia ad! Facilis nulla provident
+      inventore doloremque sit molestias nobis voluptate, rerum ipsum
+      architecto. Autem, sequi?
+    </p>
+
+    <a href="#">Link</a>
+
+    <ul>
+      <li>Unordered</li>
+      <li>List</li>
+      <li>Foo</li>
+      <li>Bar</li>
+    </ul>
+
+    <ol>
+      <li>Ordered</li>
+      <li>List</li>
+      <li>Hello</li>
+      <li>World</li>
+    </ol>
+  </section>
+  <hr />
+
   <section class="container-sm">
-    <h3>Form</h3>
+    <h2>Form</h2>
     <form onsubmit="event.preventDefault();">
       <Input type="text" placeholder="Text Input" label="Text Input" required />
       <Input
