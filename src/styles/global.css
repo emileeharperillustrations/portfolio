@@ -101,8 +101,8 @@ section,
   --color-stone-900: oklch(21.6% 0.006 56.043);
   --color-stone-950: oklch(14.7% 0.004 49.25);
 
-  --color-background: var(--color-stone-300);
-  --color-foreground: var(--color-stone-950);
+  --color-background: var(--color-stone-950);
+  --color-foreground: var(--color-stone-300);
   --color-primary: #efefef;
   --color-primary-foreground: #000000;
   --color-muted: var(--color-stone-500);
@@ -110,4 +110,10 @@ section,
 
   --border-color: #292524;
   --border-radius: 4px;
+}
+
+html,
+body {
+  background-color: var(--color-background);
+  color: var(--color-foreground);
 }
