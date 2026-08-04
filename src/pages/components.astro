@@ -7,17 +7,23 @@ import Button from "@/components/form/Button.astro";
 
 <MainLayout>
   <h2>Components</h2>
-  <h3>Form</h3>
-  <form onsubmit="event.preventDefault();">
-    <Input type="text" placeholder="Text Input" label="Text Input" required />
-    <Input
-      type="email"
-      placeholder="Email Input"
-      label="Email Input"
-      required
-    />
-    <Input type="tel" placeholder="Phone Input" label="Phone Input" />
-    <TextArea placeholder="Text Area Input" required label="Text Area Input" />
-    <Button>Submit</Button>
-  </form>
+  <section class="container-sm">
+    <h3>Form</h3>
+    <form onsubmit="event.preventDefault();">
+      <Input type="text" placeholder="Text Input" label="Text Input" required />
+      <Input
+        type="email"
+        placeholder="Email Input"
+        label="Email Input"
+        required
+      />
+      <Input type="tel" placeholder="Phone Input" label="Phone Input" />
+      <TextArea
+        placeholder="Text Area Input"
+        required
+        label="Text Area Input"
+      />
+      <Button>Submit</Button>
+    </form>
+  </section>
 </MainLayout>
