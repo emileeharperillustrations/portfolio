@@ -52,13 +52,13 @@ const { currentPage = "portfolio" } = Astro.props;
 </style>
 
 <footer>
-  <a href="#" class:list={[currentPage == "portfolio" ? "active" : null]}>
+  <a href="/" class:list={[currentPage == "portfolio" ? "active" : null]}>
     Portfolio
   </a>
-  <a href="#" class:list={[currentPage == "about" ? "active" : null]}>
+  <a href="/about" class:list={[currentPage == "about" ? "active" : null]}>
     About
   </a>
-  <a class:list={[currentPage == "contact" ? "active" : null]} href="#">
+  <a class:list={[currentPage == "contact" ? "active" : null]} href="/contact">
     Contact
   </a>
 </footer>
