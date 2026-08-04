@@ -1,0 +1,25 @@
+---
+/**
+ * A field container is a component to group label, input, err + msg elements together.
+ * It provide spacing between other elements on the form while keeping all related elements together.
+ */
+
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {}
+
+const { ...attrs } = Astro.props;
+
+const elementClasses = attrs.class ?? "" + "field-container";
+---
+
+<style>
+  .field-container {
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
+  }
+</style>
+
+<div {...attrs} class={elementClasses}>
+  <slot />
+</div>

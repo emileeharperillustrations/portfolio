@@ -1,5 +1,7 @@
 ---
+import "./form.css";
 import type { HTMLAttributes } from "astro/types";
+import FieldContainer from "@components/form/layout/FieldContainer.astro";
 
 interface Props extends HTMLAttributes<"textarea"> {
   label?: String;
@@ -7,7 +9,7 @@ interface Props extends HTMLAttributes<"textarea"> {
 const { label: labelText, ...attrs } = Astro.props;
 ---
 
-<div class="pb-2">
+<FieldContainer>
   <label for={attrs.id}>{labelText}</label>
   <textarea {...attrs}></textarea>
-</div>
+</FieldContainer>

@@ -1,4 +1,5 @@
 ---
+import "./form.css";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"button"> {}
@@ -6,19 +7,6 @@ const { ...attrs } = Astro.props;
 ---
 
 <style>
-  button {
-    --color-button: var(--color-primary);
-    --color-button-foreground: var(--color-primary-foreground);
-    --color-button-hover: color-mix(
-      in oklab,
-      var(--color-button),
-      #ffffff 100%
-    );
-    --color-button-pressed: color-mix(in oklab, var(--color-button), #000 7.5%);
-
-    --button-border-radius: var(--border-radius);
-  }
-
   button {
     background-color: var(--color-button);
     color: var(--color-button-foreground);

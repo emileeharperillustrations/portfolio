@@ -1,6 +1,10 @@
 ---
-import "../styles/util.css";
-import "../styles/global.css";
+// IMPORT ORDER MATTERS HERE //
+import "../styles/reset.css";
+import "../styles/fonts.css";
+import "../styles/theme.css";
+import "../styles/main.css";
+// IMPORT ORDER MATTERS HERE //
 
 import Header from "@components/Header.astro";
 import Footer from "@components/Footer.astro";
@@ -21,6 +25,9 @@ const { title, currentPage = "portfolio" } = Astro.props;
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
     <title>{title ? `Emilee Harper | ${title}` : "Emilee Harper"}</title>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   </head>
   <body>
     <Header />

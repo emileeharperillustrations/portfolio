@@ -1,0 +1,39 @@
+---
+/**
+ * A container is an element that forces content to a max width
+ * This is typically used for legibility and to keep design consistent on large screens.
+ *
+ * It has different sizes to help break up pages that feel to uniform or help legibility
+ * on text or forms.
+ *
+ * * In its current form, it does not support class lists
+ */
+
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"div"> {
+  size?: "sm" | "md";
+}
+
+const { size, ...attrs } = Astro.props;
+---
+
+<style>
+  .container {
+    margin: 1.5rem auto;
+    padding: 0 1rem;
+    max-width: 650px;
+  }
+
+  .container.md {
+    max-width: 650px;
+  }
+
+  .container.sm {
+    max-width: 500px;
+  }
+</style>
+
+<div {...attrs} class:list={["container", size]}>
+  <slot />
+</div>

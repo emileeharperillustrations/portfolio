@@ -1,0 +1,29 @@
+@import url("https://fonts.googleapis.com/css2?family=Geist&display=swap");
+.geist {
+  font-family: "Geist", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Liham";
+  src: url("/fonts/liham.woff2");
+}
+.liham {
+  font-family: "Liham", Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "Copperplate Gothic 32 BC";
+  src: url("/fonts/copperplate-gothic-32-bc.woff2");
+}
+.copperplate {
+  font-family: "Copperplate Gothic 32 BC", Georgia, "Times New Roman", serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+}

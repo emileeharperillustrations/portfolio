@@ -1,11 +1,48 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
+import Input from "@components/form/Input.astro";
+import TextArea from "@/components/form/TextArea.astro";
+import Button from "@/components/form/Button.astro";
+import Container from "@/components/layout/Container.astro";
 ---
 
 <MainLayout currentPage="contact">
-  <p>
-    Lorem ipsum dolor sit amet consectetur adipisicing elit. Cum nam beatae
-    provident saepe vel. Possimus libero quod ab vero minus itaque odio, fugiat
-    a, ipsam totam delectus tempora? Eum, iusto!
-  </p>
+  <Container size="sm">
+    <h2>Contact Me</h2>
+
+    <form onsubmit="event.preventDefault();">
+      <Input
+        id="name"
+        name="name"
+        type="text"
+        placeholder="John Doe"
+        label="Name"
+        required
+      />
+      <Input
+        id="email"
+        name="email"
+        type="email"
+        placeholder="johndoe@example.com"
+        label="Email"
+        required
+      />
+      <Input
+        id="phone"
+        name="phone"
+        type="tel"
+        placeholder="555-555-5555"
+        label="Phone"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+      />
+      <TextArea
+        id="message"
+        name="message"
+        placeholder="Text Area Input"
+        required
+        label="Message"
+      />
+      <Button>Submit</Button>
+    </form>
+  </Container>
 </MainLayout>

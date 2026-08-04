@@ -3,15 +3,16 @@ import MainLayout from "@layouts/MainLayout.astro";
 import Input from "@components/form/Input.astro";
 import TextArea from "@/components/form/TextArea.astro";
 import Button from "@/components/form/Button.astro";
+import Container from "@/components/layout/Container.astro";
 ---
 
 <MainLayout title="Components">
-  <section class="container">
+  <Container>
     <h1>Components</h1>
-  </section>
+  </Container>
   <hr />
 
-  <section class="container">
+  <Container>
     <h2>Typography</h2>
     <h1>Header 1</h1>
     <h2>Header 2</h2>
@@ -39,10 +40,10 @@ import Button from "@/components/form/Button.astro";
       <li>Hello</li>
       <li>World</li>
     </ol>
-  </section>
+  </Container>
   <hr />
 
-  <section class="container-sm">
+  <Container size="sm">
     <h2>Form</h2>
     <form onsubmit="event.preventDefault();">
       <Input type="text" placeholder="Text Input" label="Text Input" required />
@@ -60,5 +61,5 @@ import Button from "@/components/form/Button.astro";
       />
       <Button>Submit</Button>
     </form>
-  </section>
+  </Container>
 </MainLayout>
