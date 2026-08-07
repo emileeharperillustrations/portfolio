@@ -12,7 +12,7 @@
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"div"> {
-  size?: "sm" | "md";
+  size?: "sm" | "md" | "lg" | "xl";
 }
 
 const { size, ...attrs } = Astro.props;
@@ -23,6 +23,14 @@ const { size, ...attrs } = Astro.props;
     margin: 1.5rem auto;
     padding: 0 1rem;
     max-width: 650px;
+  }
+
+  .container.xl {
+    max-width: 1200px;
+  }
+
+  .container.lg {
+    max-width: 1000px;
   }
 
   .container.md {

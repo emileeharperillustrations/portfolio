@@ -49,6 +49,6 @@
   --color-button-pressed: color-mix(in oklab, var(--color-button), #000 7.5%);
   --button-border-radius: var(--border-radius);
 
-  --container-size: 650px;
-  --container-sm-size: 500px;
+  /* Art Grid */
+  --min-art-width: 230px; /* This value is the min size an art grid column wants to take. Art can still be smaller than this if the screen width is less 230px. This value is also kind of a "magic value" in terms of i played with the number until the grid broke down nicely on all common screen sizes */
 }

@@ -18,14 +18,14 @@ const portfolio = await getCollection("portfolio");
   }
 
   .art-grid {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(var(--min-art-width), 1fr));
     gap: 1rem;
   }
 </style>
 
 <MainLayout currentPage="portfolio">
-  <Container>
+  <Container size="lg">
     <div class="art-grid">
       {
         portfolio
