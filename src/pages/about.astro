@@ -1,10 +1,28 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
 import Container from "@components/layout/Container.astro";
+import { Image } from "astro:assets";
+import EmileeHarperPng from "@assets/emilee-harper.png";
 ---
 
+<style>
+  h2 {
+    text-align: center;
+  }
+
+  p {
+    text-align: center;
+  }
+
+  img {
+    margin: auto;
+  }
+</style>
+
 <MainLayout currentPage="about">
+  <Image src={EmileeHarperPng} alt="" width={300} height={300} />
   <Container>
+    <h2>About Me</h2>
     <p>
       Emilee Harper is a freelance illustrator based in Asheville, North
       Carolina. Semi-realism, abstract linework, and pops of color are what make
@@ -13,9 +31,8 @@ import Container from "@components/layout/Container.astro";
       Gathering inspired illustrations.
     </p>
     <p>
-      For commissions or freelance inquires, please <a href="/contact"
-        >contact me</a
-      >.
+      For commissions or freelance inquires, please&nbsp;
+      <a href="/contact">contact me</a>.
     </p>
   </Container>
 </MainLayout>
