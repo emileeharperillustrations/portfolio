@@ -17,6 +17,7 @@ const portfolio = defineCollection({
             title: z.string(),
             date: z.date(),
             description: z.string().optional(),
+            alt: z.string().optional().default(""),
             image: image(),
         }),
 });

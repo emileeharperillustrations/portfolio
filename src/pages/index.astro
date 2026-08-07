@@ -37,7 +37,7 @@ const portfolio = await getCollection("portfolio");
             <Image
               src={artwork.data.image}
               layout="full-width"
-              alt=""
+              alt={artwork.data.alt}
               class="artwork"
             />
           ))
