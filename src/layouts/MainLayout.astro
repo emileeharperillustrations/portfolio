@@ -35,7 +35,9 @@ const { title, currentPage = "portfolio" } = Astro.props;
   </head>
   <body>
     <Header />
-    <slot />
+    <main>
+      <slot />
+    </main>
     <Footer currentPage={currentPage} />
   </body>
 </html>

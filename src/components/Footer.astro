@@ -47,22 +47,24 @@ const { currentPage = "portfolio" } = Astro.props;
 </style>
 
 <footer>
-  <a
-    href="/emilee-harper-portfolio/"
-    class:list={[currentPage == "portfolio" ? "active" : null]}
-  >
-    Portfolio
-  </a>
-  <a
-    href="/emilee-harper-portfolio/about"
-    class:list={[currentPage == "about" ? "active" : null]}
-  >
-    About
-  </a>
-  <a
-    class:list={[currentPage == "contact" ? "active" : null]}
-    href="/emilee-harper-portfolio/contact"
-  >
-    Contact
-  </a>
+  <nav>
+    <a
+      href="/emilee-harper-portfolio/"
+      class:list={[currentPage == "portfolio" ? "active" : null]}
+    >
+      Portfolio
+    </a>
+    <a
+      href="/emilee-harper-portfolio/about"
+      class:list={[currentPage == "about" ? "active" : null]}
+    >
+      About
+    </a>
+    <a
+      class:list={[currentPage == "contact" ? "active" : null]}
+      href="/emilee-harper-portfolio/contact"
+    >
+      Contact
+    </a>
+  </nav>
 </footer>
