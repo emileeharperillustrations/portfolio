@@ -34,7 +34,12 @@ const portfolio = await getCollection("portfolio");
               new Date(b.data.date).getTime() - new Date(a.data.date).getTime(),
           )
           .map((artwork) => (
-            <Image class="artwork" src={artwork.data.image} alt="" />
+            <Image
+              src={artwork.data.image}
+              layout="full-width"
+              alt=""
+              class="artwork"
+            />
           ))
       }
     </div>
