@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+
+# Exclude AI scrapers from downloading your artwork
+User-agent: Google-Extended
+Disallow: /
+User-agent: CCBot
+Disallow: /
+User-agent: GPTBot
+Disallow: /
+User-agent: PerplexityBot
+Disallow: /
+User-agent: anthropic-ai
+Disallow: /
+
+Sitemap: https://foopis23.github.io/emilee-harper-portfolio/sitemap-index.xml
