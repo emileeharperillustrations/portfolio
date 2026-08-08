@@ -39,7 +39,8 @@ document.body.addEventListener("htmx:afterSettle", () => {
     (window as any).hcaptcha.render('h-captcha', // string: ID of target div to render into
         {
             sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
-            theme: 'dark'
+            theme: 'dark',
+            callback: 'showSubmitButton'
         });
 
     init();
