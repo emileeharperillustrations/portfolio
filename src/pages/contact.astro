@@ -11,7 +11,26 @@ import Container from "@/components/layout/Container.astro";
   <Container size="sm">
     <h2>Contact Me</h2>
 
-    <form onsubmit="event.preventDefault();">
+    <form
+      id="contact-form"
+      action="https://api.web3forms.com/submit"
+      method="POST"
+    >
+      <input
+        type="hidden"
+        name="access_key"
+        value="0f59b768-0537-49bf-ab50-c74cf19905a6"
+      />
+      <input
+        type="hidden"
+        name="subject"
+        value="New Submission from Contact Me Form"
+      />
+      <input
+        type="hidden"
+        name="redirect"
+        value="https://foopis23.github.io/emilee-harper-portfolio/success"
+      />
       <Input
         id="name"
         name="name"
@@ -28,14 +47,6 @@ import Container from "@/components/layout/Container.astro";
         label="Email"
         required
       />
-      <Input
-        id="phone"
-        name="phone"
-        type="tel"
-        placeholder="555-555-5555"
-        label="Phone"
-        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
-      />
       <TextArea
         id="message"
         name="message"
@@ -43,7 +54,16 @@ import Container from "@/components/layout/Container.astro";
         required
         label="Message"
       />
-      <Button>Submit</Button>
+      <div
+        id="h-captcha"
+        class="h-captcha"
+        data-captcha="true"
+        data-theme="dark"
+        data-callback="showSubmitButton"
+      >
+      </div>
+
+      <Button id="contact-form-submit">Submit</Button>
     </form>
   </Container>
 </MainLayout>

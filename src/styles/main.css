@@ -45,6 +45,11 @@ h3 {
   font-size: 28px;
 }
 
+.h-captcha {
+  width: fit-content;
+  margin: auto;
+}
+
 ::view-transition-old(root),
 ::view-transition-new(root) {
   animation-duration: 0.2s;
