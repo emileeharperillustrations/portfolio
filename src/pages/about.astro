@@ -1,5 +1,5 @@
 ---
-import { Image, getImage } from "astro:assets";
+import { Image } from "astro:assets";
 import MainLayout from "@layouts/MainLayout.astro";
 import Container from "@components/layout/Container.astro";
 import EmileeHarperPng from "@assets/emilee-harper.png";
@@ -16,6 +16,10 @@ import EmileeHarperPng from "@assets/emilee-harper.png";
 
   img {
     margin: auto;
+  }
+
+  a {
+    color: var(--color-primary);
   }
 </style>
 
@@ -42,7 +46,7 @@ import EmileeHarperPng from "@assets/emilee-harper.png";
     </p>
     <p>
       For commissions or freelance inquires, please&nbsp;
-      <a href="/contact">contact me</a>.
+      <a href="/emilee-harper-portfolio/contact">contact me</a>.
     </p>
   </Container>
 </MainLayout>
