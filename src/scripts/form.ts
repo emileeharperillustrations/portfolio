@@ -3,6 +3,7 @@
     const hcaptcha = document.getElementById("h-captcha");
     if (!submitButton) return;
     if (!hcaptcha) return;
+
     submitButton.style.display = "block";
     hcaptcha.style.display = "none";
 };
@@ -34,4 +35,12 @@ function handleFormSubmit(event: Event) {
 }
 
 document.addEventListener("DOMContentLoaded", init)
-document.body.addEventListener("htmx:afterSettle", init);
+document.body.addEventListener("htmx:afterSettle", () => {
+    (window as any).hcaptcha.render('h-captcha', // string: ID of target div to render into
+        {
+            sitekey: '50b2fe65-b00b-4b9e-ad62-3ba471098be2',
+            theme: 'dark'
+        });
+
+    init();
+});
