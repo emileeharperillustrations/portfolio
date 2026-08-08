@@ -22,9 +22,13 @@ const { title, currentPage = "portfolio" } = Astro.props;
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-    <link rel="icon" href="/favicon.ico" />
-    <link rel="sitemap" href="/sitemap-index.xml" />
+    <link
+      rel="icon"
+      type="image/svg+xml"
+      href="/emilee-harper-portfolio/favicon.svg"
+    />
+    <link rel="icon" href="/emilee-harper-portfolio//favicon.ico" />
+    <link rel="sitemap" href="/emilee-harper-portfolio/sitemap-index.xml" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <meta name="viewport" content="width=device-width" />
@@ -34,45 +38,6 @@ const { title, currentPage = "portfolio" } = Astro.props;
       name="description"
       content="Emilee Harper is a freelance illustrator based in Asheville, North Carolina. Semi-realism, abstract linework, and pops of color are what make her art eye catching. She has done work for her local game store, Gamers' Haunt, since 2022, decorating the same golden frame with Magic the Gathering inspired illustrations."
     />
-    <script>
-      import htmx from "htmx.org";
-      import "htmx-ext-head-support";
-
-      if (import.meta.env.DEV === true) {
-        // https://htmx.org/docs/#debugging
-        htmx.logAll();
-      }
-
-      // https://htmx.org/docs/#view-transitions
-      htmx.config.globalViewTransitions = true;
-
-      // https://docs.astro.build/en/guides/view-transitions/#astroafter-swap
-      document.addEventListener("astro:after-swap", () => {
-        htmx.process(document.body);
-      });
-
-      function positionTitle() {
-        const hero = document.getElementById("hero");
-        const title = document.querySelector(
-          `#desktop-title[data-sticky-title="true"]`,
-        ) as HTMLElement | null;
-        if (!hero) return;
-        if (!title) return;
-        const top = Math.max(
-          hero.clientHeight / 2 - title.clientHeight / 2 - window.scrollY,
-          0,
-        );
-        title.style.top = `${top}px`;
-      }
-      (window as any).positionTitle = positionTitle;
-
-      document
-        .getElementById("main-content")
-        ?.addEventListener("htmx:afterSwap", () => {
-          console.log("hello world");
-          positionTitle();
-        });
-    </script>
   </head>
   <body hx-ext="head-support">
     <Header />
@@ -80,5 +45,9 @@ const { title, currentPage = "portfolio" } = Astro.props;
       <slot />
     </main>
     <Footer currentPage={currentPage} />
+
+    <script src="../scripts/htmx.ts"></script>
+    <script src="../scripts/sticky-title.ts"></script>
+    <script src="../scripts/nav-chips.ts"></script>
   </body>
 </html>

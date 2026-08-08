@@ -95,15 +95,4 @@ const portfolio = await getCollection("portfolio");
       }
     </div>
   </Container>
-  <script>
-    window.addEventListener("scroll", positionTitle);
-    window.addEventListener("resize", positionTitle);
-    document.addEventListener("DOMContentLoaded", () => {
-      positionTitle();
-    });
-    document.body.addEventListener("htmx:afterSwap", () => {
-      console.log("hello world");
-      positionTitle();
-    });
-  </script>
 </MainLayout>
