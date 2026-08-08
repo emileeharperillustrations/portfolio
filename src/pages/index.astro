@@ -1,9 +1,10 @@
 ---
+import { Image } from "astro:assets";
+import { getCollection } from "astro:content";
 import MainLayout from "@layouts/MainLayout.astro";
 import Container from "@components/layout/Container.astro";
-import { Image } from "astro:assets";
+import HeroImg from "@assets/Woodland_Reflections.jpg";
 
-import { getCollection } from "astro:content";
 const portfolio = await getCollection("portfolio");
 ---
 
@@ -35,16 +36,13 @@ const portfolio = await getCollection("portfolio");
 
   @media (width >= 65rem) {
     .hero {
-      display: flex;
+      display: block;
       width: 100%;
       height: auto;
       aspect-ratio: 24 / 9;
-      background-image: url("https://placehold.co/1920x1080");
-      background-size: cover;
-      background-position: center;
+      object-fit: cover;
+      object-position: center;
       background-repeat: no-repeat;
-      justify-content: center;
-      align-items: center;
     }
 
     .desktop-title {
@@ -68,9 +66,8 @@ const portfolio = await getCollection("portfolio");
 </style>
 
 <MainLayout title="Portfolio" currentPage="portfolio">
-  <div id="hero" class="hero">
-    <div class="bg-img"></div>
-  </div>
+  <Image id="hero" src={HeroImg} alt="" class="hero" layout="full-width" />
+
   <div id="desktop-title" data-sticky-title="true" class="desktop-title title">
     <div id="inner-desktop-title" class="inner-desktop-title">
       Emilee Harper

@@ -1,7 +1,7 @@
 ---
+import { Image, getImage } from "astro:assets";
 import MainLayout from "@layouts/MainLayout.astro";
 import Container from "@components/layout/Container.astro";
-import { Image } from "astro:assets";
 import EmileeHarperPng from "@assets/emilee-harper.png";
 ---
 
@@ -28,6 +28,7 @@ import EmileeHarperPng from "@assets/emilee-harper.png";
       width={300}
       height={300}
       layout="fixed"
+      class="circle"
     />
   </Container>
   <Container>
