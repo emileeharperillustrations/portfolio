@@ -48,6 +48,12 @@ const { currentPage = "portfolio" } = Astro.props;
   a.active {
     color: var(--color-foreground);
   }
+
+  @media (width >= 60rem) {
+    footer {
+      display: none;
+    }
+  }
 </style>
 
 <footer>

@@ -22,9 +22,61 @@ const portfolio = await getCollection("portfolio");
     grid-template-columns: repeat(auto-fill, minmax(var(--min-art-width), 1fr));
     gap: 1rem;
   }
+
+  .hero {
+    display: none;
+    position: relative;
+  }
+
+  .desktop-title {
+    display: none;
+    position: relative;
+  }
+
+  @media (width >= 60rem) {
+    .hero {
+      display: flex;
+      width: 100%;
+      height: auto;
+      aspect-ratio: 24 / 9;
+      background-image: url("https://placehold.co/1920x1080");
+      background-size: cover;
+      background-position: center;
+      background-repeat: no-repeat;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .desktop-title {
+      display: block;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      padding-top: 0.5rem;
+    }
+
+    .inner-desktop-title {
+      background-color: black;
+      padding: 0.25rem 1.1rem;
+      font-size: 28px;
+      border-radius: 21px;
+
+      max-width: fit-content;
+      margin: auto;
+    }
+  }
 </style>
 
 <MainLayout title="Portfolio" currentPage="portfolio">
+  <div id="hero" class="hero">
+    <div class="bg-img"></div>
+  </div>
+  <div id="desktop-title" class="desktop-title title">
+    <div id="inner-desktop-title" class="inner-desktop-title">
+      Emilee Harper
+    </div>
+  </div>
   <Container size="lg">
     <div class="art-grid">
       {
@@ -44,4 +96,26 @@ const portfolio = await getCollection("portfolio");
       }
     </div>
   </Container>
+  <script>
+    const hero = document.getElementById("hero");
+    const title = document.getElementById("desktop-title");
+
+    function positionTitle() {
+      if (!hero) return;
+      if (!title) return;
+      const top = Math.max(
+        hero.clientHeight / 2 - title.clientHeight / 2 - window.scrollY,
+        0,
+      );
+      title.style.top = `${top}px`;
+    }
+
+    window.addEventListener("scroll", positionTitle);
+
+    window.addEventListener("resize", positionTitle);
+
+    document.addEventListener("DOMContentLoaded", () => {
+      positionTitle();
+    });
+  </script>
 </MainLayout>

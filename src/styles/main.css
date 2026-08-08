@@ -38,3 +38,21 @@ h3 {
 .circle {
   border-radius: 50%;
 }
+
+.desktop-title {
+  display: none;
+  position: relative;
+}
+
+@media (width >= 60rem) {
+  body {
+    padding-top: 0;
+    padding-bottom: 0;
+  }
+
+  .desktop-title {
+    display: block;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+  }
+}

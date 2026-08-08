@@ -8,7 +8,7 @@
 
 @font-face {
   font-family: "Liham";
-  src: url("/fonts/liham.woff2");
+  src: url("/emilee-harper-portfolio/fonts/liham.woff2");
 }
 .liham {
   font-family: "Liham", Georgia, "Times New Roman", serif;
@@ -19,7 +19,7 @@
 
 @font-face {
   font-family: "Copperplate Gothic 32 BC";
-  src: url("/fonts/copperplate-gothic-32-bc.woff2");
+  src: url("/emilee-harper-portfolio/copperplate-gothic-32-bc.woff2");
 }
 .copperplate {
   font-family: "Copperplate Gothic 32 BC", Georgia, "Times New Roman", serif;
