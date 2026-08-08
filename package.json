@@ -14,6 +14,8 @@
   "dependencies": {
     "@astrojs/sitemap": "^3.7.3",
     "@lucide/astro": "^1.30.0",
-    "astro": "^7.1.6"
+    "astro": "^7.1.6",
+    "htmx-ext-head-support": "^2.0.5",
+    "htmx.org": "^2.0.10"
   }
 }

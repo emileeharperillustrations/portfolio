@@ -32,10 +32,27 @@ const { title, currentPage = "portfolio" } = Astro.props;
       name="description"
       content="Emilee Harper is a freelance illustrator based in Asheville, North Carolina. Semi-realism, abstract linework, and pops of color are what make her art eye catching. She has done work for her local game store, Gamers' Haunt, since 2022, decorating the same golden frame with Magic the Gathering inspired illustrations."
     />
+    <script>
+      import htmx from "htmx.org";
+      import "htmx-ext-head-support";
+
+      if (import.meta.env.DEV === true) {
+        // https://htmx.org/docs/#debugging
+        htmx.logAll();
+      }
+
+      // https://htmx.org/docs/#view-transitions
+      htmx.config.globalViewTransitions = true;
+
+      // https://docs.astro.build/en/guides/view-transitions/#astroafter-swap
+      document.addEventListener("astro:after-swap", () => {
+        htmx.process(document.body);
+      });
+    </script>
   </head>
-  <body>
+  <body hx-ext="head-support">
     <Header />
-    <main>
+    <main id="main-content">
       <slot />
     </main>
     <Footer currentPage={currentPage} />
