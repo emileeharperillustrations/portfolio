@@ -7,8 +7,8 @@ import { visualizer } from "rollup-plugin-visualizer";
 
 // https://astro.build/config
 export default defineConfig({
-  site: "https://foopis23.github.io/",
-  base: "/emilee-harper-portfolio",
+  site: "https://emileeharperillustrations.github.io/",
+  base: "/portfolio",
   vite: {
     plugins: [visualizer({
       emitFile: true,

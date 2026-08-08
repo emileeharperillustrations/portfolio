@@ -66,14 +66,14 @@ const { currentPage = "portfolio" } = Astro.props;
 <footer>
   <nav hx-boost="true">
     <a
-      href="/emilee-harper-portfolio/"
+      href="/portfolio/"
       class:list={[currentPage == "portfolio" ? "active" : null]}
     >
       <Brush />
       Portfolio
     </a>
     <a
-      href="/emilee-harper-portfolio/about"
+      href="/portfolio/about"
       class:list={[currentPage == "about" ? "active" : null]}
     >
       <MessageSquare />
@@ -81,7 +81,7 @@ const { currentPage = "portfolio" } = Astro.props;
     </a>
     <a
       class:list={[currentPage == "contact" ? "active" : null]}
-      href="/emilee-harper-portfolio/contact"
+      href="/portfolio/contact"
     >
       <SquareUser />
       Contact
