@@ -38,7 +38,8 @@
 
   /* Input & TextArea */
   --color-input: var(--color-muted-foreground);
-  --color-input-foreground: var(--color-muted);
+  --color-input-foreground: var(--color-primary);
+  --color-input-placeholder: var(--color-muted);
   --color-input-border: #292524;
   --input-border-radius: var(--border-radius);
 
