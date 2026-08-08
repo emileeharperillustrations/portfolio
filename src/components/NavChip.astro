@@ -8,7 +8,9 @@ const { ...attrs } = Astro.props;
 
 <style>
   .nav-chip {
-    display: block;
+    display: flex;
+    min-width: 133px;
+    justify-content: right;
   }
 
   .nav-chip .chip {
@@ -17,19 +19,35 @@ const { ...attrs } = Astro.props;
     justify-items: center;
     background-color: var(--color-primary);
     color: var(--color-primary-foreground);
-    gap: 0.5rem;
-    padding-left: 0.75rem;
-    padding-right: 0.75rem;
-    padding-top: 6px;
-    padding-bottom: 6px;
+    padding: 0.4rem;
     width: fit-content;
     border-radius: 13px;
   }
+
+  .chip-text {
+    overflow: hidden;
+    width: 0;
+    line-height: 1;
+    transition: all 250ms;
+    text-wrap: nowrap;
+  }
+
+  .nav-chip:hover .chip-text,
+  .nav-chip[data-expanded="true"] .chip-text {
+    display: block;
+    width: fit-content;
+    margin-left: 0.25rem;
+  }
 </style>
 
-<a {...attrs} class="nav-chip copperplate" href="/emilee-harper-portfolio">
+<a
+  {...attrs}
+  data-expanded="false"
+  class="nav-chip copperplate"
+  href="/emilee-harper-portfolio"
+>
   <span class="chip">
     <slot name="icon" />
-    <slot />
+    <span class="chip-text"><slot /></span>
   </span>
 </a>
