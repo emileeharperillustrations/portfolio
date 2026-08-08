@@ -1,14 +1,20 @@
 ---
 import MainLayout from "@layouts/MainLayout.astro";
-import Input from "@components/form/Input.astro";
-import TextArea from "@/components/form/TextArea.astro";
-import Button from "@/components/form/Button.astro";
 import Container from "@/components/layout/Container.astro";
 ---
 
+<style>
+  h2 {
+    text-align: center;
+  }
+  p {
+    text-align: center;
+  }
+</style>
+
 <MainLayout title="Contact Me" currentPage="contact">
   <div id="desktop-title" class="desktop-title title">Emilee Harper</div>
-  <Container size="sm">
+  <Container>
     <h2>Your submission has been received</h2>
     <p>
       Thank you for reaching out. I will get back to you as soon as possible.
