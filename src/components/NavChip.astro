@@ -38,6 +38,15 @@ const { ...attrs } = Astro.props;
     width: fit-content;
     margin-left: 0.25rem;
   }
+
+  @media (prefers-reduced-motion: reduce) {
+    .nav-chip .chip-text {
+      display: block !important;
+      width: fit-content !important;
+      margin-left: 0.25rem !important;
+      transition: none !important;
+    }
+  }
 </style>
 
 <a
