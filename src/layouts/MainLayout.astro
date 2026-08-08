@@ -4,6 +4,8 @@ import "../styles/reset.css";
 import "../styles/fonts.css";
 import "../styles/theme.css";
 import "../styles/main.css";
+
+import "../styles/form.css";
 // IMPORT ORDER MATTERS HERE //
 
 import Header from "@components/Header.astro";
@@ -48,6 +50,28 @@ const { title, currentPage = "portfolio" } = Astro.props;
       document.addEventListener("astro:after-swap", () => {
         htmx.process(document.body);
       });
+
+      function positionTitle() {
+        const hero = document.getElementById("hero");
+        const title = document.querySelector(
+          `#desktop-title[data-sticky-title="true"]`,
+        ) as HTMLElement | null;
+        if (!hero) return;
+        if (!title) return;
+        const top = Math.max(
+          hero.clientHeight / 2 - title.clientHeight / 2 - window.scrollY,
+          0,
+        );
+        title.style.top = `${top}px`;
+      }
+      (window as any).positionTitle = positionTitle;
+
+      document
+        .getElementById("main-content")
+        ?.addEventListener("htmx:afterSwap", () => {
+          console.log("hello world");
+          positionTitle();
+        });
     </script>
   </head>
   <body hx-ext="head-support">

@@ -1,33 +1,8 @@
 ---
-import "./form.css";
 import type { HTMLAttributes } from "astro/types";
 
 interface Props extends HTMLAttributes<"button"> {}
 const { ...attrs } = Astro.props;
 ---
-
-<style>
-  button {
-    background-color: var(--color-button);
-    color: var(--color-button-foreground);
-    width: 100%;
-    padding-block: 1rem;
-    font-size: 20px;
-    outline: none;
-    border: none;
-    border-radius: var(--button-border-radius);
-
-    transition: all 200ms ease-in-out;
-  }
-
-  button:hover {
-    cursor: pointer;
-    background-color: var(--color-button-hover);
-  }
-
-  button:active {
-    background-color: var(--color-button-pressed);
-  }
-</style>
 
 <button {...attrs}><slot /></button>

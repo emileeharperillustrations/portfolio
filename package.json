@@ -17,5 +17,8 @@
     "astro": "^7.1.6",
     "htmx-ext-head-support": "^2.0.5",
     "htmx.org": "^2.0.10"
+  },
+  "devDependencies": {
+    "rollup-plugin-visualizer": "^7.0.1"
   }
 }

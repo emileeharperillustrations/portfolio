@@ -71,7 +71,7 @@ const portfolio = await getCollection("portfolio");
   <div id="hero" class="hero">
     <div class="bg-img"></div>
   </div>
-  <div id="desktop-title" class="desktop-title title">
+  <div id="desktop-title" data-sticky-title="true" class="desktop-title title">
     <div id="inner-desktop-title" class="inner-desktop-title">
       Emilee Harper
     </div>
@@ -96,24 +96,13 @@ const portfolio = await getCollection("portfolio");
     </div>
   </Container>
   <script>
-    const hero = document.getElementById("hero");
-    const title = document.getElementById("desktop-title");
-
-    function positionTitle() {
-      if (!hero) return;
-      if (!title) return;
-      const top = Math.max(
-        hero.clientHeight / 2 - title.clientHeight / 2 - window.scrollY,
-        0,
-      );
-      title.style.top = `${top}px`;
-    }
-
     window.addEventListener("scroll", positionTitle);
-
     window.addEventListener("resize", positionTitle);
-
     document.addEventListener("DOMContentLoaded", () => {
+      positionTitle();
+    });
+    document.body.addEventListener("htmx:afterSwap", () => {
+      console.log("hello world");
       positionTitle();
     });
   </script>
