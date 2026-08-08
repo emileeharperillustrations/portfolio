@@ -1,3 +1,8 @@
+---
+import NavChip from "./NavChip.astro";
+import { Brush, SquareUser, MessageSquare } from "@lucide/astro";
+---
+
 <style>
   header {
     position: fixed;
@@ -12,9 +17,24 @@
     z-index: 5;
   }
 
+  .desktop-nav {
+    display: none;
+  }
+
   @media (width >= 60rem) {
     header {
       display: none;
+    }
+
+    .desktop-nav {
+      display: flex;
+      flex-direction: column;
+      position: fixed;
+      top: 0.5rem;
+      right: 0.5rem;
+      z-index: 50;
+      gap: 0.5rem;
+      align-items: flex-end;
     }
   }
 </style>
@@ -22,5 +42,18 @@
   <header>
     <span class="title">Emilee Harper</span>
   </header>
-  <nav></nav>
+  <nav class="desktop-nav">
+    <NavChip href="/emilee-harper-portfolio">
+      <Brush slot="icon" />
+      Portfolio
+    </NavChip>
+    <NavChip href="/emilee-harper-portfolio/about">
+      <SquareUser slot="icon" />
+      About Me
+    </NavChip>
+    <NavChip href="/emilee-harper-portfolio/contact">
+      <MessageSquare slot="icon" />
+      Contact
+    </NavChip>
+  </nav>
 </>

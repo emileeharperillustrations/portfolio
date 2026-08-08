@@ -1,0 +1,35 @@
+---
+import type { HTMLAttributes } from "astro/types";
+
+interface Props extends HTMLAttributes<"a"> {}
+
+const { ...attrs } = Astro.props;
+---
+
+<style>
+  .nav-chip {
+    display: block;
+  }
+
+  .nav-chip .chip {
+    display: flex;
+    align-items: center;
+    justify-items: center;
+    background-color: var(--color-primary);
+    color: var(--color-primary-foreground);
+    gap: 0.5rem;
+    padding-left: 0.75rem;
+    padding-right: 0.75rem;
+    padding-top: 6px;
+    padding-bottom: 6px;
+    width: fit-content;
+    border-radius: 13px;
+  }
+</style>
+
+<a {...attrs} class="nav-chip copperplate" href="/emilee-harper-portfolio">
+  <span class="chip">
+    <slot name="icon" />
+    <slot />
+  </span>
+</a>

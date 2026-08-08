@@ -19,11 +19,12 @@
 
 @font-face {
   font-family: "Copperplate Gothic 32 BC";
-  src: url("/emilee-harper-portfolio/copperplate-gothic-32-bc.woff2");
+  src: url("/emilee-harper-portfolio/fonts/copperplate-gothic-32-bc.woff2");
 }
 .copperplate {
   font-family: "Copperplate Gothic 32 BC", Georgia, "Times New Roman", serif;
   font-optical-sizing: auto;
   font-weight: 400;
   font-style: normal;
+  text-decoration: none;
 }
